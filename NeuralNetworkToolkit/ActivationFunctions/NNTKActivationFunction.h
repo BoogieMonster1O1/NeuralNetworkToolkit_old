@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (float)derivativeOfOutput:(float)output;
 
-- (void)compute:(float*)inputBuffer length:(int)length;
+- (void)compute:(float*)inputBuffer length:(NSUInteger)length;
 
 @end
 

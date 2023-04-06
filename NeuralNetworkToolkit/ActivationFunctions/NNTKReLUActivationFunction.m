@@ -21,7 +21,7 @@
     return output > 0 ? 1 : 0;
 }
 
-- (void)compute:(float*)inputBuffer length:(int)length {
+- (void)compute:(float*)inputBuffer length:(NSUInteger)length {
     for (int i = 0; i < length; i++) {
         inputBuffer[i] = [self compute:inputBuffer[i]];
     }

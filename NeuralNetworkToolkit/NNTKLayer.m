@@ -16,12 +16,12 @@
         self.inputSize = inputSize;
         self.outputSize = outputSize;
         
-        // Initialize weights and biases with random values
+        // Initialize weights and biases with garbage values
         NSUInteger weightsSize = inputSize * outputSize * sizeof(float);
-        self.weights = [self randomDataOfSize:weightsSize];
+        self.weights = malloc(weightsSize);
         
         NSUInteger biasesSize = outputSize * sizeof(float);
-        self.biases = [self randomDataOfSize:biasesSize];
+        self.biases = malloc(biasesSize);
         
         self.activationFunction = activationFunction;
     }
@@ -38,8 +38,8 @@
     // Compute the weighted sum of inputs and biases
     float weightedSum[self.outputSize];
     memset(weightedSum, 0, self.outputSize * sizeof(float));
-    vDSP_mmul(self.weights.bytes, 1, inputBuffer, 1, weightedSum, 1, self.outputSize, 1, self.inputSize);
-    vDSP_vadd(weightedSum, 1, self.biases.bytes, 1, outputBuffer, 1, self.outputSize);
+    vDSP_mmul(self.weights, 1, inputBuffer, 1, weightedSum, 1, self.outputSize, 1, self.inputSize);
+    vDSP_vadd(weightedSum, 1, self.biases, 1, outputBuffer, 1, self.outputSize);
     
     // Apply the activation function to each element in the output buffer
     [self.activationFunction compute:outputBuffer length:self.outputSize];
@@ -50,10 +50,9 @@
     return outputData;
 }
 
-- (NSData *)randomDataOfSize:(NSUInteger)size {
-    void *buffer = malloc(size);
-    arc4random_buf(buffer, size);
-    return [NSData dataWithBytesNoCopy:buffer length:size freeWhenDone:YES];
+- (void)deallocate {
+    free(self.weights);
+    free(self.biases);
 }
 
 @end

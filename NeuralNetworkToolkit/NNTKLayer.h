@@ -14,13 +14,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) NSUInteger inputSize;
 @property (nonatomic, assign) NSUInteger outputSize;
-@property (nonatomic, strong) NSData *weights;
-@property (nonatomic, strong) NSData *biases;
+@property (nonatomic, assign) float *weights;
+@property (nonatomic, assign) float *biases;
 @property (nonatomic, strong) id<NNTKActivationFunction> activationFunction;
 
 - (instancetype)initWithInputSize:(NSUInteger)inputSize outputSize:(NSUInteger)outputSize activationFunction:(id<NNTKActivationFunction>)activationFunction;
 
 - (NSData *)forward:(NSData *)input;
+
+- (void)deallocate;
 
 @end
 

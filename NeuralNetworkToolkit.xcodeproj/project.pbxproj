@@ -19,6 +19,8 @@
 		6405486729DED61F00209B54 /* NNTKReLUActivationFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6405486529DED61F00209B54 /* NNTKReLUActivationFunction.m */; };
 		6405486A29DED67200209B54 /* NNTKTanhActivationFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 6405486829DED67200209B54 /* NNTKTanhActivationFunction.h */; };
 		6405486B29DED67200209B54 /* NNTKTanhActivationFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6405486929DED67200209B54 /* NNTKTanhActivationFunction.m */; };
+		6405487129DEE33F00209B54 /* NNTKNeuralNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 6405486F29DEE33F00209B54 /* NNTKNeuralNetwork.h */; };
+		6405487229DEE33F00209B54 /* NNTKNeuralNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 6405487029DEE33F00209B54 /* NNTKNeuralNetwork.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		6405486929DED67200209B54 /* NNTKTanhActivationFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNTKTanhActivationFunction.m; sourceTree = "<group>"; };
 		6405486D29DEDC0700209B54 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6405486E29DEDC7200209B54 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		6405486F29DEE33F00209B54 /* NNTKNeuralNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNTKNeuralNetwork.h; sourceTree = "<group>"; };
+		6405487029DEE33F00209B54 /* NNTKNeuralNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNTKNeuralNetwork.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 				6405484529DED33A00209B54 /* NeuralNetworkToolkit.h */,
 				6405485A29DED36200209B54 /* NNTKLayer.h */,
 				6405485B29DED36200209B54 /* NNTKLayer.m */,
+				6405486F29DEE33F00209B54 /* NNTKNeuralNetwork.h */,
+				6405487029DEE33F00209B54 /* NNTKNeuralNetwork.m */,
 			);
 			path = NeuralNetworkToolkit;
 			sourceTree = "<group>";
@@ -130,6 +136,7 @@
 			files = (
 				6405486A29DED67200209B54 /* NNTKTanhActivationFunction.h in Headers */,
 				6405486229DED59E00209B54 /* NNTKSigmoidActivationFunction.h in Headers */,
+				6405487129DEE33F00209B54 /* NNTKNeuralNetwork.h in Headers */,
 				6405485129DED33A00209B54 /* NeuralNetworkToolkit.h in Headers */,
 				6405486629DED61F00209B54 /* NNTKReLUActivationFunction.h in Headers */,
 				6405485F29DED56600209B54 /* NNTKActivationFunction.h in Headers */,
@@ -237,6 +244,7 @@
 				6405485D29DED36200209B54 /* NNTKLayer.m in Sources */,
 				6405486B29DED67200209B54 /* NNTKTanhActivationFunction.m in Sources */,
 				6405486729DED61F00209B54 /* NNTKReLUActivationFunction.m in Sources */,
+				6405487229DEE33F00209B54 /* NNTKNeuralNetwork.m in Sources */,
 				6405486329DED59E00209B54 /* NNTKSigmoidActivationFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
