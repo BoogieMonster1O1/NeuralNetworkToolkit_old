@@ -9,17 +9,23 @@
 
 @implementation NNTKTanhActivationFunction
 
-- (double)compute:(double)x {
+- (float)compute:(float)x {
     return tanh(x);
 }
 
-- (double)derivative:(double)x {
+- (float)derivative:(float)x {
     double output = [self compute:x];
     return 1 - output * output;
 }
 
-- (double)derivativeOfOutput:(double)output {
+- (float)derivativeOfOutput:(float)output {
     return 1 - output * output;
+}
+
+- (void)compute:(float*)inputBuffer length:(int)length {
+    for (int i = 0; i < length; i++) {
+        inputBuffer[i] = [self.activationFunction compute:inputBuffer[i]];
+    }
 }
 
 @end

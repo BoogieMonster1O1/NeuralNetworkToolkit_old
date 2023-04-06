@@ -10,7 +10,7 @@
 
 @implementation NNTKLayer
 
-- (instancetype)initWithInputSize:(NSUInteger)inputSize outputSize:(NSUInteger)outputSize {
+- (instancetype)initWithInputSize:(NSUInteger)inputSize outputSize:(NSUInteger)outputSize activationFunction:(id<NNTKActivationFunction>)activationFunction {
     self = [super init];
     if (self) {
         self.inputSize = inputSize;
@@ -22,33 +22,32 @@
         
         NSUInteger biasesSize = outputSize * sizeof(float);
         self.biases = [self randomDataOfSize:biasesSize];
+        
+        self.activationFunction = activationFunction;
     }
     return self;
 }
 
 - (NSData *)forward:(NSData *)input {
-    // Make sure input size matches layer input size
-    if (input.length != self.inputSize * sizeof(float)) {
-        [NSException raise:@"Invalid input size" format:@"Expected input size %lu, but got %lu", (unsigned long)self.inputSize, input.length / sizeof(float)];
-    }
+    // Convert input NSData to float array
+    const float *inputBuffer = input.bytes;
     
-    // Allocate memory for output
+    // Allocate memory for the output buffer
     float *outputBuffer = malloc(self.outputSize * sizeof(float));
     
-    // Compute matrix multiplication
-    vDSP_mmul((float *)self.weights.bytes, 1, (float *)input.bytes, 1, outputBuffer, 1, self.outputSize, 1, self.inputSize);
+    // Compute the weighted sum of inputs and biases
+    float weightedSum[self.outputSize];
+    memset(weightedSum, 0, self.outputSize * sizeof(float));
+    vDSP_mmul(self.weights.bytes, 1, inputBuffer, 1, weightedSum, 1, self.outputSize, 1, self.inputSize);
+    vDSP_vadd(weightedSum, 1, self.biases.bytes, 1, outputBuffer, 1, self.outputSize);
     
-    // Add biases to output
-    vDSP_vadd(outputBuffer, 1, (float *)self.biases.bytes, 1, outputBuffer, 1, self.outputSize);
+    // Apply the activation function to each element in the output buffer
+    [self.activationFunction compute:outputBuffer length:self.outputSize];
     
-    // Apply ReLU activation function
-    vDSP_vmax(outputBuffer, 1, &zero, outputBuffer, 1, self.outputSize);
+    // Convert output float array to NSData without copying the output buffer
+    NSData *outputData = [NSData dataWithBytesNoCopy:outputBuffer length:self.outputSize * sizeof(float)];
     
-    // Convert output buffer to NSData object
-    NSData *output = [NSData dataWithBytesNoCopy:outputBuffer length:self.outputSize * sizeof(float)];
-    outputBuffer = NULL;
-    
-    return output;
+    return outputData;
 }
 
 - (NSData *)randomDataOfSize:(NSUInteger)size {

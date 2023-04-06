@@ -11,11 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol NNTKActivationFunction <NSObject>
 
-- (double)compute:(double)x;
+- (float)compute:(float)x;
 
-- (double)derivative:(double)x;
+- (float)derivative:(float)x;
 
-- (double)derivativeOfOutput:(double)output;
+- (float)derivativeOfOutput:(float)output;
+
+- (void)compute:(float*)inputBuffer length:(int)length;
 
 @end
 

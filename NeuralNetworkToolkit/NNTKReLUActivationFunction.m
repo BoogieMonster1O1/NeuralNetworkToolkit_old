@@ -9,16 +9,22 @@
 
 @implementation NNTKReLUActivationFunction
 
-- (double)compute:(double)x {
+- (float)compute:(float)x {
     return x > 0 ? x : 0;
 }
 
-- (double)derivative:(double)x {
+- (float)derivative:(float)x {
     return x > 0 ? 1 : 0;
 }
 
-- (double)derivativeOfOutput:(double)output {
+- (float)derivativeOfOutput:(float)output {
     return output > 0 ? 1 : 0;
+}
+
+- (void)compute:(float*)inputBuffer length:(int)length {
+    for (int i = 0; i < length; i++) {
+        inputBuffer[i] = [self.activationFunction compute:inputBuffer[i]];
+    }
 }
 
 @end
