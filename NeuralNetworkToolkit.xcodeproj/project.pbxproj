@@ -46,6 +46,7 @@
 		6405486829DED67200209B54 /* NNTKTanhActivationFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNTKTanhActivationFunction.h; sourceTree = "<group>"; };
 		6405486929DED67200209B54 /* NNTKTanhActivationFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNTKTanhActivationFunction.m; sourceTree = "<group>"; };
 		6405486D29DEDC0700209B54 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6405486E29DEDC7200209B54 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 		6405483829DED33900209B54 = {
 			isa = PBXGroup;
 			children = (
+				6405486E29DEDC7200209B54 /* LICENSE */,
 				6405486D29DEDC0700209B54 /* README.md */,
 				6405484429DED33A00209B54 /* NeuralNetworkToolkit */,
 				6405484E29DED33A00209B54 /* NeuralNetworkToolkitTests */,
