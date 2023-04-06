@@ -15,6 +15,10 @@
 		6405485F29DED56600209B54 /* NNTKActivationFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 6405485E29DED56600209B54 /* NNTKActivationFunction.h */; };
 		6405486229DED59E00209B54 /* NNTKSigmoidActivationFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 6405486029DED59E00209B54 /* NNTKSigmoidActivationFunction.h */; };
 		6405486329DED59E00209B54 /* NNTKSigmoidActivationFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6405486129DED59E00209B54 /* NNTKSigmoidActivationFunction.m */; };
+		6405486629DED61F00209B54 /* NNTKReLUActivationFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 6405486429DED61F00209B54 /* NNTKReLUActivationFunction.h */; };
+		6405486729DED61F00209B54 /* NNTKReLUActivationFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6405486529DED61F00209B54 /* NNTKReLUActivationFunction.m */; };
+		6405486A29DED67200209B54 /* NNTKTanhActivationFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 6405486829DED67200209B54 /* NNTKTanhActivationFunction.h */; };
+		6405486B29DED67200209B54 /* NNTKTanhActivationFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6405486929DED67200209B54 /* NNTKTanhActivationFunction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,10 @@
 		6405485E29DED56600209B54 /* NNTKActivationFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNTKActivationFunction.h; sourceTree = "<group>"; };
 		6405486029DED59E00209B54 /* NNTKSigmoidActivationFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNTKSigmoidActivationFunction.h; sourceTree = "<group>"; };
 		6405486129DED59E00209B54 /* NNTKSigmoidActivationFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNTKSigmoidActivationFunction.m; sourceTree = "<group>"; };
+		6405486429DED61F00209B54 /* NNTKReLUActivationFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNTKReLUActivationFunction.h; sourceTree = "<group>"; };
+		6405486529DED61F00209B54 /* NNTKReLUActivationFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNTKReLUActivationFunction.m; sourceTree = "<group>"; };
+		6405486829DED67200209B54 /* NNTKTanhActivationFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNTKTanhActivationFunction.h; sourceTree = "<group>"; };
+		6405486929DED67200209B54 /* NNTKTanhActivationFunction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNTKTanhActivationFunction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,10 @@
 				6405485E29DED56600209B54 /* NNTKActivationFunction.h */,
 				6405486029DED59E00209B54 /* NNTKSigmoidActivationFunction.h */,
 				6405486129DED59E00209B54 /* NNTKSigmoidActivationFunction.m */,
+				6405486429DED61F00209B54 /* NNTKReLUActivationFunction.h */,
+				6405486529DED61F00209B54 /* NNTKReLUActivationFunction.m */,
+				6405486829DED67200209B54 /* NNTKTanhActivationFunction.h */,
+				6405486929DED67200209B54 /* NNTKTanhActivationFunction.m */,
 			);
 			path = NeuralNetworkToolkit;
 			sourceTree = "<group>";
@@ -104,8 +116,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6405486A29DED67200209B54 /* NNTKTanhActivationFunction.h in Headers */,
 				6405486229DED59E00209B54 /* NNTKSigmoidActivationFunction.h in Headers */,
 				6405485129DED33A00209B54 /* NeuralNetworkToolkit.h in Headers */,
+				6405486629DED61F00209B54 /* NNTKReLUActivationFunction.h in Headers */,
 				6405485F29DED56600209B54 /* NNTKActivationFunction.h in Headers */,
 				6405485C29DED36200209B54 /* NNTKLayer.h in Headers */,
 			);
@@ -209,6 +223,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6405485D29DED36200209B54 /* NNTKLayer.m in Sources */,
+				6405486B29DED67200209B54 /* NNTKTanhActivationFunction.m in Sources */,
+				6405486729DED61F00209B54 /* NNTKReLUActivationFunction.m in Sources */,
 				6405486329DED59E00209B54 /* NNTKSigmoidActivationFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
