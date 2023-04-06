@@ -23,7 +23,7 @@
 
 - (void)compute:(float*)inputBuffer length:(int)length {
     for (int i = 0; i < length; i++) {
-        inputBuffer[i] = [self.activationFunction compute:inputBuffer[i]];
+        inputBuffer[i] = [self compute:inputBuffer[i]];
     }
 }
 

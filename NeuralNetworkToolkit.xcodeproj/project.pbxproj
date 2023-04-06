@@ -87,16 +87,10 @@
 		6405484429DED33A00209B54 /* NeuralNetworkToolkit */ = {
 			isa = PBXGroup;
 			children = (
+				6405486C29DEDA8700209B54 /* ActivationFunctions */,
 				6405484529DED33A00209B54 /* NeuralNetworkToolkit.h */,
 				6405485A29DED36200209B54 /* NNTKLayer.h */,
 				6405485B29DED36200209B54 /* NNTKLayer.m */,
-				6405485E29DED56600209B54 /* NNTKActivationFunction.h */,
-				6405486029DED59E00209B54 /* NNTKSigmoidActivationFunction.h */,
-				6405486129DED59E00209B54 /* NNTKSigmoidActivationFunction.m */,
-				6405486429DED61F00209B54 /* NNTKReLUActivationFunction.h */,
-				6405486529DED61F00209B54 /* NNTKReLUActivationFunction.m */,
-				6405486829DED67200209B54 /* NNTKTanhActivationFunction.h */,
-				6405486929DED67200209B54 /* NNTKTanhActivationFunction.m */,
 			);
 			path = NeuralNetworkToolkit;
 			sourceTree = "<group>";
@@ -107,6 +101,20 @@
 				6405484F29DED33A00209B54 /* NeuralNetworkToolkitTests.m */,
 			);
 			path = NeuralNetworkToolkitTests;
+			sourceTree = "<group>";
+		};
+		6405486C29DEDA8700209B54 /* ActivationFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				6405485E29DED56600209B54 /* NNTKActivationFunction.h */,
+				6405486029DED59E00209B54 /* NNTKSigmoidActivationFunction.h */,
+				6405486129DED59E00209B54 /* NNTKSigmoidActivationFunction.m */,
+				6405486429DED61F00209B54 /* NNTKReLUActivationFunction.h */,
+				6405486529DED61F00209B54 /* NNTKReLUActivationFunction.m */,
+				6405486829DED67200209B54 /* NNTKTanhActivationFunction.h */,
+				6405486929DED67200209B54 /* NNTKTanhActivationFunction.m */,
+			);
+			path = ActivationFunctions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

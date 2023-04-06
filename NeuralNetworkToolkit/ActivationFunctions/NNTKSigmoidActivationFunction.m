@@ -9,12 +9,12 @@
 
 @implementation NNTKSigmoidActivationFunction
 
-- (float)activate:(float)x {
+- (float)compute:(float)x {
     return 1.0f / (1.0f + exp(-x));
 }
 
 - (float)derivative:(float)x {
-    float s = [self activate:x];
+    float s = [self compute:x];
     return s * (1.0f - s);
 }
 
@@ -24,7 +24,7 @@
 
 - (void)compute:(float*)inputBuffer length:(int)length {
     for (int i = 0; i < length; i++) {
-        inputBuffer[i] = [self.activationFunction compute:inputBuffer[i]];
+        inputBuffer[i] = [self compute:inputBuffer[i]];
     }
 }
 
